@@ -1,0 +1,21 @@
+params:
+  - id: backup_dir_name
+    type: string
+    name: "the backup directory name"
+    description: "the backup directory name under your lazy cat directory to backup"
+
+  - id: time_zone
+    type: string
+    name: "the time zone"
+    description: "the time zone of the system"
+    default_value: "Asia/Shanghai"
+
+locales:
+  zh:
+    backup_dir_name:
+      name: "备份目录名称"
+      description: "在您懒猫网盘目录要备份的目录名称"
+
+    time_zone:
+      name: "时区"
+      description: "系统时区"
