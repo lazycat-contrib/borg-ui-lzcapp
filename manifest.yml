@@ -20,7 +20,7 @@ services:
   borg-ui:
     # ainullcode/borg-ui:1.18.4
     image: registry.lazycat.cloud/czyt/ainullcode/borg-ui:0ace2fb500d73d4f
-    user: 1000
+    user: root
     container_name: borg-ui
     binds:
       - /lzcapp/var/data:/data
