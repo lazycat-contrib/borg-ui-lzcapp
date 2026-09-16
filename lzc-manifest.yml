@@ -1,7 +1,6 @@
 ext_config:
   enable_document_access: true
   enable_media_access: true
-
 application:
   subdomain: borg-ui
   multi_instance: true
@@ -11,11 +10,10 @@ application:
   upstreams:
     - location: /
       backend: http://borg-ui:8081/
-
 services:
   borg-ui:
-    # upstream: ainullcode/borg-ui:1.65.0
-    image: ainullcode/borg-ui:1.65.0
+    # upstream: ainullcode/borg-ui:2.2.6
+    image: registry.lazycat.cloud/czyt/ainullcode/borg-ui:258737122cf69b0e
     user: root
     binds:
       - /lzcapp/var/data:/data

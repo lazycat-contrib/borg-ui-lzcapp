@@ -1,5 +1,5 @@
 package: community.lazycat.app.borg-ui
-version: 1.18.4
+version: 2.2.6
 name: Borg Web UI
 description: "Borg Backup 的现代网页界面。零配置部署 - 直接运行即可。"
 min_os_version: "1.5.0"
