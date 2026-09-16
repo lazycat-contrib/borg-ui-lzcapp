@@ -1,0 +1,40 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/borg-ui.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: borg-ui
+
+build:
+  run_buildscript: false
+
+images:
+  - id: borg-ui
+    target: service
+    service: borg-ui
+    source: ainullcode/borg-ui
+    channel: stable
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: lazycat
+
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    changelog_locales: [zh, en]
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Borg Web UI
+    summary: "Borg Backup 的现代网页界面。零配置部署 - 直接运行即可。"

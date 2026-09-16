@@ -1,0 +1,27 @@
+ext_config:
+  enable_document_access: true
+  enable_media_access: true
+
+application:
+  subdomain: borg-ui
+  multi_instance: true
+  background_task: true
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://borg-ui:8081/
+
+services:
+  borg-ui:
+    # upstream: ainullcode/borg-ui:1.65.0
+    image: ainullcode/borg-ui:1.65.0
+    user: root
+    binds:
+      - /lzcapp/var/data:/data
+      - /lzcapp/var/cache:/home/borg/.cache/borg
+      - /lzcapp/document/{{.U.backup_dir_name}}:/local
+    environment:
+      - TZ={{.U.time_zone}} # Set your timezone
+      - PUID=1000
+      - PGID=1000
