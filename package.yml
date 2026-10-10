@@ -1,4 +1,5 @@
 package: community.lazycat.app.borg-ui
+license: AGPL-3.0
 version: 2.3.10
 name: Borg Web UI
 description: "Borg Backup 的现代网页界面。零配置部署 - 直接运行即可。"
