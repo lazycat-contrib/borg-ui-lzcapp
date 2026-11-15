@@ -12,8 +12,8 @@ application:
       backend: http://borg-ui:8081/
 services:
   borg-ui:
-    # upstream: ainullcode/borg-ui:2.4.8
-    image: registry.lazycat.cloud/czyt/ainullcode/borg-ui:af6bacdf3aa953ae
+    # upstream: ainullcode/borg-ui:2.4.9
+    image: registry.lazycat.cloud/czyt/ainullcode/borg-ui:8275955e0aff9651
     user: root
     binds:
       - /lzcapp/var/data:/data
